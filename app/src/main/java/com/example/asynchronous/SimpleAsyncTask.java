@@ -12,7 +12,7 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class SimpleAsyncTask extends AsyncTask<Void, Integer, String> {
     private WeakReference<TextView> mTextView;
-    private WeakReference<TextView> mResultTextView;
+    private WeakReference<TextView> mResultTextView; //sebagai weakrefrence untuk result
 
     public SimpleAsyncTask(TextView tv, TextView result) {
         mTextView = new WeakReference<>(tv);
@@ -26,7 +26,7 @@ public class SimpleAsyncTask extends AsyncTask<Void, Integer, String> {
         int n = r.nextInt(11);
 
         int s = n * 200;
-        publishProgress(s,n); //akan mengupdate ui ketika waktu sleep telah dihitung
+        publishProgress(s); //akan mengupdate ui ketika waktu sleep telah dihitung
         Log.d(TAG, "doInBackground: " + s);
 
 
